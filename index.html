@@ -31,6 +31,16 @@
 
     <!-- script ================================================== -->
     <script src="js/modernizr.js"></script>
+        <script>
+         function handleClick() {
+             const link = document.createElement('a');
+             link.href = 'documents/brochure.pdf'; // Path to the PDF
+             link.download = 'brochure.pdf';       // Set the desired file name
+             document.body.appendChild(link);      // Append the link to the DOM
+             link.click();                         // Programmatically click the link
+             document.body.removeChild(link); 
+         }
+        </script>
 
 </head>
 
@@ -104,7 +114,9 @@
                                             class="badge bg-secondary">Pro</span></a></li>
                             </ul>
                         </li>
-                        <li class="nav-item ms-2"><a href="https://templatesjungle.gumroad.com/l/roofers-roofing-bootstrap-html-website-template" class="dropdown-item text-uppercase btn btn-primary text-white py-2 px-3 ">BROCHURE </a></li>
+                        <li class="nav-item ms-2">
+                            <button class="dropdown-item text-uppercase btn btn-primary text-white py-2 px-3 " id="downloadBtn" onclick="handleClick()">BROCHURE</button>
+                        </li>
 
                     </ul>
 
